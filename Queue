@@ -1,0 +1,55 @@
+package PriorityDeque;
+import java.util.*;
+public class maccess {
+
+	@SuppressWarnings("removal")
+	public static void main(String[] args) {
+		@SuppressWarnings("resource")
+		Scanner s = new Scanner(System.in);
+		Queue<Integer> q = new PriorityQueue<Integer>();
+		while(true) {
+			System.out.println("Enter the choice");
+	    	System.out.println("1.add\n2.remove\n3.element\n4.peek\n5.poll\n6.exit");
+  		switch(s.nextInt()) {
+	     	case 1:
+	   		System.out.println("Enter the element for adding");
+	  		int newElement = s.nextInt();
+		  	q.add(new Integer(newElement));
+	  		System.out.println(q.toString());
+	  		break;
+	  	case 2:
+			System.out.println("Removing the element");
+			if(q.isEmpty()) {
+				System.out.println("Queue is empty");
+			} else {
+				q.remove();
+				System.out.println(q.toString());
+			}
+			break;
+		case 3:
+			System.out.println("Element");
+			if(q.isEmpty()) {
+				System.out.println("Queue is empty");
+			} else {
+				System.out.println("element:"+q.element());
+				System.out.println(q.toString());
+			}
+			break;
+		case 4:
+			System.out.println("peek"+q.peek());
+			System.out.println(q.toString());
+			break;
+		case 5:
+			System.out.println("poll"+q.poll());
+			System.out.println(q.toString());
+			break;
+		case 6:
+			System.out.println("Queue operations are stopped");
+			System.exit(0);
+			break;
+		default: 
+			System.out.println("Invalid number");
+		}
+	  }
+	}
+}
